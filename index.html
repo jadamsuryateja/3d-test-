@@ -39,14 +39,24 @@
 
     html {
       scroll-behavior: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    html::-webkit-scrollbar {
+      display: none;
     }
 
     body {
-      background: var(--ink);
-      color: var(--parchment);
+      background: #9EC5DB;
+      color: #ffffff;
       font-family: var(--f-body);
       overflow-x: hidden;
       cursor: default;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    body::-webkit-scrollbar {
+      display: none;
     }
 
     ::selection {
@@ -64,7 +74,8 @@
       inset: 0;
       width: 100%;
       height: 100%;
-      z-index: 1;
+      z-index: 12;
+      pointer-events: none;
       display: block;
     }
 
@@ -83,7 +94,7 @@
       position: fixed;
       inset: 0;
       z-index: 100;
-      background: var(--ink);
+      background: #9EC5DB;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -102,7 +113,7 @@
       font-family: var(--f-mono);
       font-size: 11px;
       letter-spacing: .35em;
-      color: var(--steel-lt);
+      color: #ffffff;
       text-transform: uppercase;
     }
 
@@ -130,7 +141,7 @@
       font-size: 15vw;
       line-height: .85;
       letter-spacing: .02em;
-      color: var(--parchment);
+      color: #ffffff;
       opacity: .9;
     }
 
@@ -151,7 +162,7 @@
 
     .hud-corner {
       position: absolute;
-      color: var(--parchment);
+      color: #ffffff;
       font-size: 11px;
       letter-spacing: .12em;
     }
@@ -168,7 +179,7 @@
     }
 
     .hud-label {
-      color: var(--steel-lt);
+      color: #ffffff;
       font-size: 9px;
       letter-spacing: .25em;
       margin-bottom: 4px;
@@ -176,13 +187,13 @@
 
     .hud-value {
       font-size: 22px;
-      color: var(--parchment);
+      color: #ffffff;
       font-weight: 500;
     }
 
     .hud-unit {
       font-size: 10px;
-      color: var(--brass);
+      color: #ffffff;
       margin-left: 4px;
     }
 
@@ -205,35 +216,18 @@
 
     #compass-heading {
       font-size: 16px;
-      color: var(--brass);
+      color: #ffffff;
       letter-spacing: .1em;
     }
 
-    #flight-strip {
-      position: absolute;
-      left: 24px;
-      right: 24px;
-      bottom: 24px;
-      height: 2px;
-      background: rgba(124, 147, 172, .25);
-    }
 
-    #flight-strip>i {
-      position: absolute;
-      top: -3px;
-      width: 8px;
-      height: 8px;
-      background: var(--brass);
-      transform: translateX(-50%) rotate(45deg);
-      box-shadow: 0 0 8px rgba(192, 138, 78, .8);
-    }
 
     .strip-mark {
       position: absolute;
       bottom: 8px;
       font-size: 8px;
       letter-spacing: .1em;
-      color: var(--steel-lt);
+      color: #ffffff;
       transform: translateX(-50%);
       white-space: nowrap;
     }
@@ -256,6 +250,28 @@
       }
     }
 
+    /* ---------- cinematic & elevations ---------- */
+    #film-grain {
+      position: fixed;
+      inset: 0;
+      z-index: 90;
+      pointer-events: none;
+      opacity: 0.06;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    .cinematic-bar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      height: 8vh;
+      background: #000;
+      z-index: 15;
+      pointer-events: none;
+    }
+    .cinematic-bar.top { top: 0; }
+    .cinematic-bar.bottom { bottom: 0; }
+
     /* ---------- content ---------- */
     main {
       position: relative;
@@ -273,7 +289,7 @@
     .panel {
       max-width: 560px;
       background: none;
-      color: var(--parchment);
+      color: #ffffff;
       padding: 44px 42px;
       border-left: 3px solid var(--brass);
       opacity: 0;
@@ -289,7 +305,7 @@
       font-size: 11px;
       letter-spacing: .2em;
       text-transform: uppercase;
-      color: var(--brass);
+      color: #ffffff;
       display: flex;
       align-items: center;
       gap: 10px;
@@ -316,7 +332,7 @@
     p {
       font-size: 16px;
       line-height: 1.65;
-      color: rgba(255, 255, 255, 0.82);
+      color: #ffffff;
       max-width: 46ch;
     }
 
@@ -328,7 +344,7 @@
       font-family: var(--f-mono);
       font-size: 11px;
       letter-spacing: .3em;
-      color: var(--steel-lt);
+      color: #ffffff;
       text-transform: uppercase;
       margin-top: 24px;
       display: block;
@@ -349,7 +365,7 @@
       font-family: var(--f-mono);
       font-size: 12px;
       letter-spacing: .4em;
-      color: var(--brass);
+      color: #ffffff;
       text-transform: uppercase;
       margin-bottom: 18px;
       opacity: 0;
@@ -361,15 +377,14 @@
       font-size: clamp(56px, 11vw, 150px);
       line-height: .82;
       letter-spacing: .005em;
-      color: var(--parchment);
-      text-shadow: 0 10px 50px rgba(0, 0, 0, .5);
+      color: #ffffff;
       opacity: 0;
     }
 
     .hero-sub {
       max-width: 520px;
       font-size: 18px;
-      color: var(--steel-lt);
+      color: #ffffff;
       margin-top: 24px;
       line-height: 1.6;
       opacity: 0;
@@ -384,7 +399,7 @@
       font-size: 12px;
       letter-spacing: .2em;
       text-transform: uppercase;
-      color: var(--parchment);
+      color: #ffffff;
       text-decoration: none;
       border-bottom: 1px solid var(--brass);
       padding-bottom: 6px;
@@ -426,7 +441,7 @@
       font-family: var(--f-mono);
       font-size: 14px;
       letter-spacing: .1em;
-      color: var(--roundel);
+      color: #ffffff;
       text-decoration: none;
       border-bottom: 1px solid var(--roundel);
     }
@@ -441,7 +456,7 @@
       font-family: var(--f-mono);
       font-size: 10px;
       letter-spacing: .15em;
-      color: var(--steel-lt);
+      color: #ffffff;
       flex-wrap: wrap;
       gap: 10px;
     }
@@ -477,10 +492,12 @@
 
   <canvas id="plane-canvas"></canvas>
   <div id="canvas-scrim"></div>
+  <div id="film-grain"></div>
+  <div class="cinematic-bar top"></div>
+  <div class="cinematic-bar bottom"></div>
 
   <div id="loader">
     <div class="loader-title">A/D</div>
-    <div class="loader-tag">Pre-flight check</div>
     <div class="loader-bar"><span id="loader-fill"></span></div>
   </div>
 
@@ -497,7 +514,6 @@
       <div id="compass-heading">000°</div>
       <div id="compass-tape"></div>
     </div>
-    <div id="flight-strip"><i id="flight-marker"></i></div>
   </div>
 
   <main>
@@ -604,16 +620,17 @@
 
     /* ================= THREE SETUP ================= */
     const canvas = document.getElementById('plane-canvas');
-    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false });
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.35;
+    renderer.setClearColor('#9EC5DB', 0);
 
     const scene = new THREE.Scene();
     const bgColor = new THREE.Color('#9EC5DB');
-    scene.background = bgColor;
+    // background handled by css now
 
     const camera = new THREE.PerspectiveCamera(42, window.innerWidth / window.innerHeight, 0.05, 500);
 
@@ -758,7 +775,6 @@
     const hudAlt = document.getElementById('hud-alt');
     const hudSpeed = document.getElementById('hud-speed');
     const compassHeading = document.getElementById('compass-heading');
-    const flightMarker = document.getElementById('flight-marker');
 
     const altSteps = [0, 0, 1200, 4000, 6500, 2000, 0];
     function stepValue(arr, t) {
@@ -810,29 +826,35 @@
           camPos.x += Math.sin(t * 0.35) * dims.W * 0.012;
           camPos.y += Math.sin(t * 0.5)  * dims.H * 0.020;
 
+          /* -- physical elevation bobbing & lateral drift (air pockets) -- */
+          const liftBob = Math.sin(t * 0.7) * 0.25 + Math.sin(t * 0.3) * 0.35;
+          planeRig.position.y = liftBob * dims.H * 0.5;
+          const drift = Math.sin(t * 0.45) * 0.15;
+          planeRig.position.x = drift * dims.W * 0.5;
+
           /* -- altitude gradient → pitch (nose up climbing, down descending) -- */
           const p0 = Math.max(0, displayProgress - 0.01);
           const p1 = Math.min(1, displayProgress + 0.01);
           const altGrad = (stepValue(altSteps, p1) - stepValue(altSteps, p0)) / 7000;
-          const pitchTarget = altGrad * 1.4 + Math.sin(t * 0.28) * 0.018;
+          const pitchTarget = altGrad * 2.2 + Math.sin(t * 0.28) * 0.035;
 
           /* -- natural roll: primary bank + harmonic shimmy -- */
-          const rollNatural = Math.sin(t * 0.22) * 0.055
-                            + Math.sin(t * 0.39) * 0.022
-                            + Math.sin(t * 0.61) * 0.010;
+          const rollNatural = Math.sin(t * 0.22) * 0.10
+                            + Math.sin(t * 0.39) * 0.04
+                            + Math.sin(t * 0.61) * 0.02;
 
           /* -- yaw: lazy heading wander -- */
-          const yawNatural  = Math.sin(t * 0.17) * 0.038
-                            + Math.sin(t * 0.43) * 0.018;
+          const yawNatural  = Math.sin(t * 0.17) * 0.07
+                            + Math.sin(t * 0.43) * 0.03;
 
           /* -- turbulence: 3-layer high-frequency micro-jitter -- */
-          const turbP = Math.sin(t * 1.87) * 0.012 + Math.sin(t * 2.91) * 0.006 + Math.sin(t * 4.37) * 0.003;
-          const turbR = Math.sin(t * 2.13) * 0.010 + Math.sin(t * 3.47) * 0.005;
-          const turbY = Math.sin(t * 1.61) * 0.008 + Math.sin(t * 2.79) * 0.004;
+          const turbP = Math.sin(t * 1.87) * 0.018 + Math.sin(t * 2.91) * 0.010 + Math.sin(t * 4.37) * 0.005;
+          const turbR = Math.sin(t * 2.13) * 0.015 + Math.sin(t * 3.47) * 0.008;
+          const turbY = Math.sin(t * 1.61) * 0.012 + Math.sin(t * 2.79) * 0.006;
 
           /* -- scroll velocity amplifies banking & yaw (feels like turning) -- */
-          const velBank = scrollVelocity * 0.55;
-          const velYaw  = scrollVelocity * 0.30;
+          const velBank = scrollVelocity * 0.95;
+          const velYaw  = scrollVelocity * 0.45;
 
           planeRig.rotation.x = pitchTarget + turbP;
           planeRig.rotation.y = yawNatural  + velYaw  + turbY;
@@ -852,7 +874,6 @@
         hudSpeed.innerHTML = speed + '<span class="hud-unit">KT</span>';
         const heading = Math.round((displayProgress * 260 + 15) % 360);
         compassHeading.textContent = String(heading).padStart(3, '0') + '°';
-        flightMarker.style.left = (displayProgress * 100) + '%';
       }
 
       renderer.render(scene, camera);
