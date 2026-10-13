@@ -47,7 +47,7 @@
     }
 
     body {
-      background: #9EC5DB;
+      background: #F5B888;
       color: #ffffff;
       font-family: var(--f-body);
       overflow-x: hidden;
@@ -85,8 +85,8 @@
       z-index: 2;
       pointer-events: none;
       background:
-        radial-gradient(ellipse at 50% 40%, rgba(14, 27, 38, 0) 35%, rgba(14, 27, 38, 0.55) 100%),
-        linear-gradient(180deg, rgba(14, 27, 38, 0.35) 0%, rgba(14, 27, 38, 0) 18%, rgba(14, 27, 38, 0) 78%, rgba(14, 27, 38, 0.55) 100%);
+        radial-gradient(ellipse at 50% 40%, rgba(26, 18, 14, 0) 35%, rgba(26, 18, 14, 0.5) 100%),
+        linear-gradient(180deg, rgba(26, 18, 14, 0.3) 0%, rgba(26, 18, 14, 0) 18%, rgba(26, 18, 14, 0) 78%, rgba(26, 18, 14, 0.5) 100%);
     }
 
     /* ---------- loader ---------- */
@@ -94,7 +94,7 @@
       position: fixed;
       inset: 0;
       z-index: 100;
-      background: #9EC5DB;
+      background: #F5B888;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -120,7 +120,7 @@
     .loader-bar {
       width: 220px;
       height: 2px;
-      background: rgba(124, 147, 172, .25);
+      background: rgba(255, 255, 255, .3);
       position: relative;
       overflow: hidden;
     }
@@ -458,7 +458,41 @@
       letter-spacing: .15em;
       color: #ffffff;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 16px;
+    }
+
+    .footer-right {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .staffarc-lockup {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.75);
+      transition: color 0.2s ease, opacity 0.2s ease;
+    }
+
+    .staffarc-lockup:hover {
+      color: #ffffff;
+      opacity: 1;
+    }
+
+    .staffarc-lockup span {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      transition: color 0.2s ease;
+    }
+
+    .staffarc-lockup img {
+      height: 16px;
+      width: auto;
+      object-fit: contain;
+      display: block;
     }
 
     @media (max-width:720px) {
@@ -596,7 +630,13 @@
 
   <footer>
     <span>Aerodyne Studio</span>
-    <span>Scroll to fly</span>
+    <div class="footer-right">
+      <span>Scroll to fly</span>
+      <a href="https://www.staffarc.in" target="_blank" rel="noreferrer" class="staffarc-lockup">
+        <span>By StaffArc</span>
+        <img src="/staffarc-logo.png" alt="StaffArc" />
+      </a>
+    </div>
   </footer>
 
   <script type="importmap">
@@ -626,21 +666,21 @@
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.35;
-    renderer.setClearColor('#9EC5DB', 0);
+    renderer.setClearColor('#F5B888', 0);
 
     const scene = new THREE.Scene();
-    const bgColor = new THREE.Color('#9EC5DB');
+    const bgColor = new THREE.Color('#F5B888');
     // background handled by css now
 
     const camera = new THREE.PerspectiveCamera(42, window.innerWidth / window.innerHeight, 0.05, 500);
 
     /* lighting */
-    const hemi = new THREE.HemisphereLight('#deeaf5', '#a8b8c8', 3.0);
+    const hemi = new THREE.HemisphereLight('#fff0e2', '#cfa888', 3.0);
     scene.add(hemi);
-    const sun = new THREE.DirectionalLight('#fff5e0', 2.8);
+    const sun = new THREE.DirectionalLight('#fff8eb', 2.8);
     sun.position.set(6, 8, 4);
     scene.add(sun);
-    const fillLight = new THREE.DirectionalLight('#c8d8e8', 1.2);
+    const fillLight = new THREE.DirectionalLight('#ffd8bc', 1.2);
     fillLight.position.set(-6, -2, -5);
     scene.add(fillLight);
 
@@ -688,9 +728,15 @@
       model.position.sub(center);
       planeRig.add(model);
 
-      /* ---- find propeller parts by name ---- */
+      /* ---- find propeller parts & customize livery ---- */
       model.traverse((obj) => {
         if (obj.name === 'polySurface171') propGroup = obj; // blade assembly
+        if (obj.name === 'polySurface201_pasted__lambert2_0' && obj.isMesh) {
+          if (obj.material && obj.material.map) {
+            obj.material.map.colorSpace = THREE.SRGBColorSpace;
+            obj.material.needsUpdate = true;
+          }
+        }
       });
 
       const { L, W, H } = dims;
