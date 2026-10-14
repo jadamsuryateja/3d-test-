@@ -151,7 +151,7 @@ a {
   align-items: center;
   justify-content: center;
   position: relative;
-  perspective: 1200px;
+  background: transparent !important;
 }
 
 #wordmark-stage {
@@ -161,7 +161,9 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  transform-style: preserve-3d;
+  background: transparent !important;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 #pulse-aura {
@@ -174,10 +176,13 @@ a {
   background: linear-gradient(135deg, #22d3ee, #3b82f6, #9333ea);
   border-radius: 50%;
   filter: blur(70px);
+  -webkit-filter: blur(70px);
   opacity: 0;
   mix-blend-mode: screen;
   pointer-events: none;
   z-index: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 #logo-wrapper {
@@ -189,16 +194,22 @@ a {
   align-items: center;
   justify-content: center;
   background: transparent !important;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 #logo-wrapper svg {
   background: transparent !important;
   overflow: visible;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .logo-path {
   transform-origin: 50% 50%;
   will-change: transform, opacity;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 #final-text-reveal {
@@ -213,6 +224,9 @@ a {
   align-items: center;
   justify-content: center;
   width: 100%;
+  background: transparent !important;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 #final-text-reveal h1 {
@@ -221,10 +235,12 @@ a {
   font-size: clamp(3.5rem, 8vw, 6rem) !important;
   font-weight: 800 !important;
   letter-spacing: -0.02em !important;
-  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.9) !important;
+  background: transparent !important;
   opacity: 1 !important;
   margin: 0;
   text-align: center;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 
