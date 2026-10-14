@@ -20,6 +20,26 @@
   box-sizing: border-box;
 }
 
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
 html {
   scroll-behavior: auto;
   scrollbar-width: none;
@@ -168,7 +188,12 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.7));
+  background: transparent !important;
+}
+
+#logo-wrapper svg {
+  background: transparent !important;
+  overflow: visible;
 }
 
 .logo-path {
@@ -413,7 +438,9 @@ p + p {
 }
 
 .hero-wrap {
-  max-width: 900px;
+  max-width: min(720px, 58vw);
+  position: relative;
+  z-index: 20;
 }
 
 .hero-eyebrow {
@@ -429,11 +456,12 @@ p + p {
 #hero h1 {
   font-family: var(--f-display);
   font-weight: 900;
-  font-size: clamp(56px, 11vw, 150px);
-  line-height: .82;
+  font-size: clamp(48px, 8.5vw, 120px);
+  line-height: .86;
   letter-spacing: .005em;
   color: #ffffff;
   opacity: 0;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
 }
 
 .hero-sub {
@@ -449,6 +477,7 @@ p + p {
   margin-top: 38px;
   display: inline-flex;
   align-items: center;
+  white-space: nowrap;
   gap: 12px;
   font-family: var(--f-mono);
   font-size: 12px;
@@ -460,12 +489,12 @@ p + p {
   padding-bottom: 6px;
   opacity: 0;
   cursor: pointer;
+  transition: color 0.25s ease, border-bottom-color 0.25s ease;
 }
 
-.hero-cta svg {
-  width: 14px;
-  height: 14px;
-  animation: bob 1.8s ease-in-out infinite;
+.hero-cta:hover {
+  color: var(--brass);
+  border-bottom-color: #ffffff;
 }
 
 @keyframes bob {
@@ -500,6 +529,8 @@ p + p {
 .text-cta-btn {
   display: inline-flex;
   align-items: center;
+  flex-wrap: nowrap;
+  white-space: nowrap;
   gap: 10px;
   font-family: var(--f-mono);
   font-size: 13px;
@@ -512,8 +543,14 @@ p + p {
   border-bottom: 1px solid var(--brass);
   padding: 0 0 6px 0;
   width: fit-content;
+  max-width: 100%;
   cursor: pointer;
   transition: color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.text-cta-btn span {
+  white-space: nowrap;
+  display: inline-block;
 }
 
 .text-cta-btn .whatsapp-icon {
@@ -545,8 +582,8 @@ p + p {
 
 footer {
   position: relative;
-  z-index: 10;
-  padding: 28px 8vw 40px;
+  z-index: 30;
+  padding: 28px 8vw calc(8vh + 32px);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -592,18 +629,99 @@ footer {
   display: block;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
   section {
-    padding: 6vh 6vw;
+    padding: 8vh 5vw;
+    min-height: 90vh;
   }
 
   .panel {
-    padding: 30px 26px;
+    padding: 24px 20px;
     max-width: 100%;
+    margin-left: 0 !important;
   }
 
-  section.right .panel {
-    margin-left: 0;
+  .hero-wrap {
+    max-width: 100% !important;
+    padding-right: 0;
+  }
+
+  #hero h1 {
+    font-size: clamp(38px, 11vw, 68px) !important;
+    line-height: 0.9 !important;
+  }
+
+  #hero .hero-sub {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-size: clamp(24px, 6.5vw, 36px) !important;
+    line-height: 1.05 !important;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .text-cta-btn {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    padding-bottom: 4px;
+  }
+
+  .text-cta-btn .whatsapp-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  #whatsapp-floating {
+    bottom: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+  }
+
+  #whatsapp-floating svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .wa-floating-tooltip {
+    display: none;
+  }
+
+  footer {
+    padding: 20px 6vw calc(8vh + 60px);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .footer-right {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 6vh 4vw;
+  }
+
+  .panel {
+    padding: 18px 16px;
+    border-left-width: 2px;
+  }
+
+  #hero h1 {
+    font-size: clamp(32px, 10vw, 48px) !important;
+  }
+
+  .text-cta-btn {
+    font-size: 10px;
+    letter-spacing: 0.08em;
   }
 }
 

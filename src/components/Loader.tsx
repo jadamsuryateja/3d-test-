@@ -52,39 +52,36 @@ export const Loader: React.FC<LoaderProps> = ({
       gsap.set(containerRef.current, { opacity: 1 });
     }
 
-    // Timeline structure:
-    // 0.0s - 1.5s: SVG logo gracefully pieces together (1.5s)
-    // 1.3s - 2.2s: Energy pulse aura glows and dissipates
-    // 1.5s - 2.6s: Logo holds and gently breathes (reaching 2.6s+ of pure SVG animation)
-    // 2.6s - 3.4s: Logo dissolves into the typography
-    // 3.1s - 4.3s: WebMark typography reveals and settles
-    // 4.3s - 5.0s: Smooth fade-out into the 3D experience
+    // Timeline structure calibrated to exact user specification:
+    // 0.0s - 3.0s: SVG animation active & holding (exactly 3.0s)
+    // 3.0s - 4.5s: WebMark text reveal (exactly 1.5s)
+    // 4.5s - 5.0s: Clean fade-out into the 3D experience
     const tl = gsap.timeline({ delay: 0.0 });
     masterTlRef.current = tl;
 
     // Reset initial states
     gsap.set('.logo-path', { opacity: 0, scale: 0.8, transformOrigin: '50% 50%' });
     gsap.set('#pulse-aura', { opacity: 0, scale: 0.2 });
-    gsap.set('#logo-wrapper', { opacity: 1, scale: 1, filter: 'blur(0px)' });
-    gsap.set('#final-text-reveal', { opacity: 0, scale: 1.15, filter: 'blur(10px)' });
+    gsap.set('#logo-wrapper', { opacity: 1, scale: 1 });
+    gsap.set('#final-text-reveal', { opacity: 0, scale: 1.15 });
     gsap.set('#final-text-reveal h1', { opacity: 1, color: '#ffffff' });
 
-    // 1. Logo Draw/Fade In: Intact logo pieces together (0.0s - 1.5s)
+    // 1. Logo Draw & Pieces Assemble (0.0s - 1.6s)
     tl.to('.logo-path', {
       opacity: 1,
       scale: 1,
-      duration: 1.3,
+      duration: 1.4,
       stagger: 0.025,
       ease: 'power3.out'
     });
 
-    // 2. Energy Pulse Burst (1.3s - 2.2s)
+    // 2. Ambient Energy Pulse (1.4s - 2.5s)
     tl.to(
       '#pulse-aura',
       {
-        opacity: 0.9,
-        scale: 2.3,
-        duration: 0.8,
+        opacity: 0.85,
+        scale: 2.2,
+        duration: 0.9,
         ease: 'power2.out'
       },
       '-=0.2'
@@ -94,65 +91,62 @@ export const Loader: React.FC<LoaderProps> = ({
       '#pulse-aura',
       {
         opacity: 0,
-        duration: 0.6,
+        duration: 0.7,
         ease: 'power2.in'
       },
-      '<0.3'
+      '<0.35'
     );
 
-    // 3. Hold on full SVG logo with subtle cinematic scale up to 2.6s mark
+    // 3. SVG Logo breathes & displays with subtle cinematic scale until 3.0s mark
     tl.to(
       '#logo-wrapper',
       {
         scale: 1.05,
-        duration: 1.1,
+        duration: 1.4,
         ease: 'sine.inOut'
       },
-      1.5
+      1.6
     );
 
-    // 4. Dissolve: Fade out full intact logo (2.6s - 3.4s) -> At least 2.6s before dissolve!
+    // 4. Logo Dissolves at 3.0s
     tl.to(
       '#logo-wrapper',
       {
         opacity: 0,
-        scale: 0.9,
-        filter: 'blur(12px)',
-        duration: 0.8,
+        scale: 0.92,
+        duration: 0.6,
         ease: 'power2.inOut'
       },
-      2.6
+      3.0
     );
 
-    // 5. Final State: Reveal the WebMark text (3.0s - 4.2s)
+    // 5. Text Reveal (3.0s to 4.5s -> exactly 1.5s duration)
     tl.to(
       '#final-text-reveal',
       {
         opacity: 1,
         scale: 1,
-        filter: 'blur(0px)',
-        duration: 1.1,
+        duration: 1.5,
         ease: 'power2.out'
       },
       3.0
     );
 
-    // 6. Hold on WebMark and fade out loader into 3D flight deck (4.5s - 5.0s)
+    // 6. Complete transition into the 3D flight deck at 4.5s
     tl.to(
       containerRef.current,
       {
         opacity: 0,
         duration: 0.5,
-        ease: 'power2.inOut',
-        delay: 0.6,
-        onComplete: () => {
-          if (containerRef.current) {
-            containerRef.current.classList.add('hidden');
-          }
-          enterExperience();
-        }
+        ease: 'power2.inOut'
+      },
+      4.5
+    ).add(() => {
+      if (containerRef.current) {
+        containerRef.current.classList.add('hidden');
       }
-    );
+      enterExperience();
+    });
   };
 
   useEffect(() => {

@@ -3,6 +3,7 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Lenis from 'lenis';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -45,7 +46,15 @@ export const Canvas3D: React.FC<Canvas3DProps> = ({
     const scene = new THREE.Scene();
     const bgColor = new THREE.Color('#060913');
 
-    const camera = new THREE.PerspectiveCamera(42, window.innerWidth / window.innerHeight, 0.05, 500);
+    // Dynamic FOV to prevent airplane clipping or crowding on narrow mobile screens
+    const getResponsiveFov = (aspect: number) => {
+      if (aspect < 0.75) return 58;  // Portrait phones
+      if (aspect < 1.0) return 50;   // Tablets / foldables
+      return 42;                     // Desktop
+    };
+
+    const initialAspect = window.innerWidth / window.innerHeight;
+    const camera = new THREE.PerspectiveCamera(getResponsiveFov(initialAspect), initialAspect, 0.05, 500);
 
     /* Starfield — Deep night sky with crisp white dot stars */
     const starCount = 1800;
@@ -218,7 +227,7 @@ export const Canvas3D: React.FC<Canvas3DProps> = ({
         const { L, W, H } = dims;
 
         const positions = [
-          V(-L * 2.3, W * 0.95, H * 1.5),    // hero — wide establishing
+          V(-L * 3.1, W * 1.55, H * 1.8),    // hero — wide angle positioning plane high & clear to the right
           V(-L * 1.35, W * 0.08, H * 0.18),  // takeoff — nose pass
           V(0, W * 1.7, H * 0.35),          // climb — side profile
           V(0.15 * L, W * 0.12, H * 2.3),   // cruise — top-down
@@ -228,7 +237,7 @@ export const Canvas3D: React.FC<Canvas3DProps> = ({
         ];
 
         const looks = [
-          V(0, 0, 0),
+          V(L * 0.45, -W * 0.25, -H * 0.15), // hero look target keeps plane in right 50% of viewport
           V(-L * 0.35, 0, H * 0.05),
           V(0, 0, 0),
           V(0, 0, H * 0.1),
@@ -334,11 +343,28 @@ export const Canvas3D: React.FC<Canvas3DProps> = ({
 
     /* Resize handler */
     const handleResize = () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
+      const aspect = window.innerWidth / window.innerHeight;
+      camera.aspect = aspect;
+      camera.fov = getResponsiveFov(aspect);
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
     };
     window.addEventListener('resize', handleResize);
+
+    /* ================= LENIS SMOOTH SCROLL (ALL DEVICES) ================= */
+    const lenis = new Lenis({
+      duration: 1.25,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      syncTouch: true,
+      touchMultiplier: 1.5,
+      wheelMultiplier: 1.0,
+      autoResize: true
+    });
+
+    lenis.on('scroll', ScrollTrigger.update);
 
     /* ================= SCROLL-DRIVEN CAMERA ================= */
     let scrollProgress = 0;
@@ -472,6 +498,7 @@ export const Canvas3D: React.FC<Canvas3DProps> = ({
         }
       }
 
+      lenis.raf(t * 1000);
       renderer.render(scene, camera);
       animFrameId = requestAnimationFrame(tick);
     }
@@ -480,6 +507,7 @@ export const Canvas3D: React.FC<Canvas3DProps> = ({
     return () => {
       cancelAnimationFrame(animFrameId);
       window.removeEventListener('resize', handleResize);
+      lenis.destroy();
       mainScrollTrigger.kill();
       panelTriggers.forEach((st) => st.kill());
       renderer.dispose();
