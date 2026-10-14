@@ -179,8 +179,9 @@ a {
   -webkit-filter: blur(70px);
   opacity: 0;
   pointer-events: none;
-  z-index: 0;
+  z-index: 1;
 }
+
 
 #logo-wrapper {
   position: absolute;
@@ -229,11 +230,12 @@ a {
   letter-spacing: -0.02em !important;
   background: transparent !important;
   -webkit-text-fill-color: #ffffff;
-  opacity: 1 !important;
   margin: 0;
   text-align: center;
+  text-shadow: none;
   -webkit-tap-highlight-color: transparent;
 }
+
 
 
 

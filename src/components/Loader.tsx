@@ -64,7 +64,6 @@ export const Loader: React.FC<LoaderProps> = ({
     gsap.set('#pulse-aura', { opacity: 0, scale: 0.2 });
     gsap.set('#logo-wrapper', { opacity: 1 });
     gsap.set('#final-text-reveal', { opacity: 0 });
-    gsap.set('#final-text-reveal h1', { opacity: 1, color: '#ffffff' });
 
     // 1. Logo Draw & Pieces Assemble (0.0s - 1.6s)
     tl.to('.logo-path', {
@@ -154,11 +153,12 @@ export const Loader: React.FC<LoaderProps> = ({
       <div className="ambient-glow ambient-glow-purple" />
       <div className="ambient-glow ambient-glow-cyan" />
 
+      {/* Pulse aura lives at loader root level — isolated from SVG compositing layer */}
+      <div id="pulse-aura" />
+
       {/* Central Animation Stage */}
       <main className="loader-stage-container">
         <div id="wordmark-stage">
-          {/* Intense Energy Pulse Aura */}
-          <div id="pulse-aura" />
 
           {/* Full Intact Logo */}
           <div id="logo-wrapper">
