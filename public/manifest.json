@@ -1,0 +1,15 @@
+{
+  "short_name": "WebMark",
+  "name": "WebMark — Digital Design Studio",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "type": "image/png",
+      "sizes": "192x192 512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#060913",
+  "theme_color": "#060913",
+  "display": "standalone"
+}

@@ -1,0 +1,73 @@
+{
+  "hero": {
+    "eyebrow": "WebMark — Digital Design Studio",
+    "title": "CRAFTED TO STAND OUT",
+    "sub": "We create premium websites and distinctive brand identities for businesses that value exceptional design, thoughtful details, and a lasting digital presence.",
+    "cta": "Start your project",
+    "ctaTarget": "#log-1"
+  },
+  "logs": [
+    {
+      "id": "log-1",
+      "alignment": "left",
+      "tag": "Foundation — 0 ft",
+      "heading": "More than just design",
+      "paragraphs": [
+        "WebMark is a premium digital design studio focused on creating meaningful first impressions. From sophisticated websites to distinctive logos, every detail is considered, every decision has a purpose, and every project is built around the identity of your business."
+      ],
+      "kicker": "Our principle: exceptional design should look remarkable and work flawlessly."
+    },
+    {
+      "id": "log-2",
+      "alignment": "right",
+      "tag": "Vision — 1,200 ft",
+      "heading": "Understanding your brand",
+      "paragraphs": [
+        "Every great digital experience begins with understanding. We explore your business, audience, goals, and market position to establish a clear creative direction before the design process begins.",
+        "The result is a considered strategy that connects your brand's vision with a distinctive digital experience."
+      ]
+    },
+    {
+      "id": "log-3",
+      "alignment": "left",
+      "tag": "Identity — 4,000 ft",
+      "heading": "Websites with distinction",
+      "paragraphs": [
+        "We design premium websites with refined layouts, purposeful typography, thoughtful motion, and carefully balanced visual elements. Every page is crafted to communicate credibility, guide visitors naturally, and present your business at its best.",
+        "Responsive design and usability remain central to the experience, across desktop, tablet, and mobile."
+      ],
+      "kicker": "Every pixel has a purpose. Every interaction earns its place."
+    },
+    {
+      "id": "log-4",
+      "alignment": "right",
+      "tag": "Precision — 6,500 ft",
+      "heading": "Logos that define identity",
+      "paragraphs": [
+        "A strong logo gives your business a recognisable visual foundation. We create distinctive, versatile identities shaped by your brand's character, with careful attention to form, proportion, typography, and colour.",
+        "From the first concept to the final artwork, we focus on clarity, consistency, and a polished identity that works across digital and print applications."
+      ]
+    },
+    {
+      "id": "log-5",
+      "alignment": "left",
+      "tag": "Partnership — 2,000 ft",
+      "heading": "A considered creative process",
+      "paragraphs": [
+        "We believe premium work comes from clear communication, deliberate decisions, and attention to detail. From the initial conversation to design, development, and final delivery, we keep the process focused on your goals and the quality of the outcome.",
+        "No unnecessary complexity. No design without direction. Just thoughtful creative work built around your business."
+      ]
+    },
+    {
+      "id": "contact",
+      "alignment": "left",
+      "tag": "Launch",
+      "heading": "Let's build something remarkable",
+      "paragraphs": [
+        "Whether you need a premium website, a distinctive logo, or a stronger digital presence, WebMark is ready to explore what's possible with your brand."
+      ],
+      "contactEmail": "hello@webmark.studio"
+    }
+  ],
+  "altitudeProfile": [0, 0, 1200, 4000, 6500, 2000, 0]
+}
