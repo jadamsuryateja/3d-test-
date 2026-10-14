@@ -60,16 +60,15 @@ export const Loader: React.FC<LoaderProps> = ({
     masterTlRef.current = tl;
 
     // Reset initial states
-    gsap.set('.logo-path', { opacity: 0, scale: 0.8, transformOrigin: '50% 50%' });
+    gsap.set('.logo-path', { opacity: 0 });
     gsap.set('#pulse-aura', { opacity: 0, scale: 0.2 });
-    gsap.set('#logo-wrapper', { opacity: 1, scale: 1 });
-    gsap.set('#final-text-reveal', { opacity: 0, scale: 1.15 });
+    gsap.set('#logo-wrapper', { opacity: 1 });
+    gsap.set('#final-text-reveal', { opacity: 0 });
     gsap.set('#final-text-reveal h1', { opacity: 1, color: '#ffffff' });
 
     // 1. Logo Draw & Pieces Assemble (0.0s - 1.6s)
     tl.to('.logo-path', {
       opacity: 1,
-      scale: 1,
       duration: 1.4,
       stagger: 0.025,
       ease: 'power3.out'
@@ -97,23 +96,13 @@ export const Loader: React.FC<LoaderProps> = ({
       '<0.35'
     );
 
-    // 3. SVG Logo breathes & displays with subtle cinematic scale until 3.0s mark
-    tl.to(
-      '#logo-wrapper',
-      {
-        scale: 1.05,
-        duration: 1.4,
-        ease: 'sine.inOut'
-      },
-      1.6
-    );
+    // 3. SVG Logo holds display until 3.0s mark (no scale to avoid iOS GPU compositing)
 
     // 4. Logo Dissolves at 3.0s
     tl.to(
       '#logo-wrapper',
       {
         opacity: 0,
-        scale: 0.92,
         duration: 0.6,
         ease: 'power2.inOut'
       },
@@ -125,7 +114,6 @@ export const Loader: React.FC<LoaderProps> = ({
       '#final-text-reveal',
       {
         opacity: 1,
-        scale: 1,
         duration: 1.5,
         ease: 'power2.out'
       },

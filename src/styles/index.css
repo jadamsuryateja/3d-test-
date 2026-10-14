@@ -152,6 +152,7 @@ a {
   justify-content: center;
   position: relative;
   background: transparent !important;
+  -webkit-tap-highlight-color: transparent;
 }
 
 #wordmark-stage {
@@ -162,8 +163,7 @@ a {
   align-items: center;
   justify-content: center;
   background: transparent !important;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
 #pulse-aura {
@@ -173,16 +173,13 @@ a {
   transform: translate(-50%, -50%);
   width: 350px;
   height: 350px;
-  background: linear-gradient(135deg, #22d3ee, #3b82f6, #9333ea);
+  background: radial-gradient(ellipse at center, rgba(34, 211, 238, 0.55) 0%, rgba(59, 130, 246, 0.45) 45%, rgba(147, 51, 234, 0.35) 100%);
   border-radius: 50%;
   filter: blur(70px);
   -webkit-filter: blur(70px);
   opacity: 0;
-  mix-blend-mode: screen;
   pointer-events: none;
   z-index: 0;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
 }
 
 #logo-wrapper {
@@ -194,22 +191,18 @@ a {
   align-items: center;
   justify-content: center;
   background: transparent !important;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
 #logo-wrapper svg {
   background: transparent !important;
   overflow: visible;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .logo-path {
   transform-origin: 50% 50%;
-  will-change: transform, opacity;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
 #final-text-reveal {
@@ -225,8 +218,7 @@ a {
   justify-content: center;
   width: 100%;
   background: transparent !important;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
 #final-text-reveal h1 {
@@ -236,11 +228,11 @@ a {
   font-weight: 800 !important;
   letter-spacing: -0.02em !important;
   background: transparent !important;
+  -webkit-text-fill-color: #ffffff;
   opacity: 1 !important;
   margin: 0;
   text-align: center;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
 
