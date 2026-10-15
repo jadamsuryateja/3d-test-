@@ -11,16 +11,14 @@ export const HUD: React.FC<HUDProps> = ({ hudRef, altRef, speedRef, headingRef }
   return (
     <div id="hud" ref={hudRef}>
       <div className="hud-corner hud-tl">
-        <div className="hud-label">Altitude</div>
-        <div className="hud-value" ref={altRef}>
-          0<span className="hud-unit">FT</span>
-        </div>
+        <a href="#log-2" className="hud-link">
+          Websites
+        </a>
       </div>
       <div className="hud-corner hud-tr">
-        <div className="hud-label">Airspeed</div>
-        <div className="hud-value" ref={speedRef}>
-          0<span className="hud-unit">KT</span>
-        </div>
+        <a href="#log-3" className="hud-link">
+          Custom Logos
+        </a>
       </div>
       <div id="compass">
         <div id="compass-heading" ref={headingRef}>

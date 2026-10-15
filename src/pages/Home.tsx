@@ -35,7 +35,7 @@ export const Home: React.FC = () => {
             <div className="contact-actions" style={{ marginTop: '20px' }}>
               <a
                 className="text-cta-btn"
-                href="https://wa.me/?text=Hi%20WebMark%2C%20I%20would%20like%20to%20enquire%20about%20a%20Premium%20Logo."
+                href="https://wa.me/917075438591?text=Hi%20WebMark%2C%20I%20would%20like%20to%20enquire%20about%20a%20Premium%20Logo."
                 target="_blank"
                 rel="noreferrer"
               >
@@ -59,7 +59,7 @@ export const Home: React.FC = () => {
             <div className="contact-actions" style={{ marginTop: '20px' }}>
               <a
                 className="text-cta-btn"
-                href="https://wa.me/?text=Hi%20WebMark%2C%20I%20would%20like%20to%20enquire%20about%20a%20Premium%20Website."
+                href="https://wa.me/917075438591?text=Hi%20WebMark%2C%20I%20would%20like%20to%20enquire%20about%20a%20Premium%20Website."
                 target="_blank"
                 rel="noreferrer"
               >
@@ -83,7 +83,7 @@ export const Home: React.FC = () => {
             <div className="contact-actions" style={{ marginTop: '20px' }}>
               <a
                 className="text-cta-btn"
-                href="https://wa.me/?text=Hi%20WebMark%2C%20I%20would%20like%20to%20enquire%20about%20a%20Premium%20Logo%20Design."
+                href="https://wa.me/917075438591?text=Hi%20WebMark%2C%20I%20would%20like%20to%20enquire%20about%20a%20Premium%20Logo%20Design."
                 target="_blank"
                 rel="noreferrer"
               >
@@ -108,7 +108,7 @@ export const Home: React.FC = () => {
             <div className="contact-actions" style={{ marginTop: '20px' }}>
               <a
                 className="text-cta-btn"
-                href="https://wa.me/?text=Hi%20WebMark%2C%20I%20would%20like%20to%20discuss%20a%20project."
+                href="https://wa.me/917075438591?text=Hi%20WebMark%2C%20I%20would%20like%20to%20discuss%20a%20project."
                 target="_blank"
                 rel="noreferrer"
               >
@@ -132,7 +132,7 @@ export const Home: React.FC = () => {
             <div className="contact-actions" style={{ marginTop: '20px' }}>
               <a
                 className="text-cta-btn"
-                href="https://wa.me/?text=Hi%20WebMark%2C%20I%20would%20like%20to%20start%20a%20project."
+                href="https://wa.me/917075438591?text=Hi%20WebMark%2C%20I%20would%20like%20to%20start%20a%20project."
                 target="_blank"
                 rel="noreferrer"
               >
@@ -156,7 +156,7 @@ export const Home: React.FC = () => {
             <div className="contact-actions">
               <a
                 className="text-cta-btn"
-                href="https://wa.me/?text=Hi%20WebMark%2C%20I%20would%20like%20to%20enquire%20about%20a%20Premium%20Logo."
+                href="https://wa.me/917075438591?text=Hi%20WebMark%2C%20I%20would%20like%20to%20enquire%20about%20a%20Premium%20Logo."
                 target="_blank"
                 rel="noreferrer"
               >
@@ -173,7 +173,7 @@ export const Home: React.FC = () => {
               </a>
               <a
                 className="text-cta-btn"
-                href="https://wa.me/?text=Hi%20WebMark%2C%20I%20would%20like%20to%20enquire%20about%20a%20Premium%20Website."
+                href="https://wa.me/917075438591?text=Hi%20WebMark%2C%20I%20would%20like%20to%20enquire%20about%20a%20Premium%20Website."
                 target="_blank"
                 rel="noreferrer"
               >

@@ -4,7 +4,7 @@ export const WhatsAppFloating: React.FC = () => {
   return (
     <a
       id="whatsapp-floating"
-      href="https://wa.me/?text=Hi%20WebMark%2C%20I%20would%20like%20to%20enquire%20about%20your%20design%20services."
+      href="https://wa.me/917075438591?text=Hi%20WebMark%2C%20I%20would%20like%20to%20enquire%20about%20your%20design%20services."
       target="_blank"
       rel="noreferrer"
       aria-label="Chat on WhatsApp"

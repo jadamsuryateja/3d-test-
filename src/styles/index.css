@@ -9,10 +9,20 @@
   --parchment-dim: #E3D9BE;
   --roundel: #BD3B3B;
 
-  --f-display: 'Big Shoulders Stencil', sans-serif;
+  --f-display: 'Playfair Display', serif;
   --f-body: 'Source Serif 4', serif;
   --f-mono: 'JetBrains Mono', monospace;
 }
+
+/* ---------- Headings ---------- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: -0.025em;
+}
+
 
 * {
   margin: 0;
@@ -291,6 +301,25 @@ a {
   margin-left: 4px;
 }
 
+.hud-link {
+  color: #ffffff;
+  font-family: var(--f-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .2em;
+  text-decoration: none;
+  pointer-events: auto;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.25s ease, opacity 0.25s ease;
+  line-height: 1;
+}
+
+.hud-link:hover {
+  color: var(--brass);
+}
+
 #compass {
   position: absolute;
   top: 20px;
@@ -411,10 +440,12 @@ section.right .panel {
 
 h2 {
   font-family: var(--f-display);
-  font-weight: 700;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
   font-size: clamp(30px, 4.4vw, 54px);
   line-height: .95;
-  letter-spacing: .01em;
+  letter-spacing: -0.025em;
   margin-bottom: 18px;
   color: #ffffff;
 }
@@ -465,10 +496,12 @@ p + p {
 
 #hero h1 {
   font-family: var(--f-display);
-  font-weight: 900;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
   font-size: clamp(48px, 8.5vw, 120px);
   line-height: .86;
-  letter-spacing: .005em;
+  letter-spacing: -0.035em;
   color: #ffffff;
   opacity: 0;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
@@ -612,7 +645,7 @@ footer {
   flex-wrap: wrap;
 }
 
-.staffarc-lockup {
+.webmark-lockup {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -621,22 +654,23 @@ footer {
   transition: color 0.2s ease, opacity 0.2s ease;
 }
 
-.staffarc-lockup:hover {
+.webmark-lockup:hover {
   color: #ffffff;
   opacity: 1;
 }
 
-.staffarc-lockup span {
+.webmark-lockup span {
   font-size: 10px;
   letter-spacing: 0.2em;
   transition: color 0.2s ease;
 }
 
-.staffarc-lockup img {
-  height: 16px;
+.webmark-lockup img {
+  height: 20px;
   width: auto;
   object-fit: contain;
   display: block;
+  filter: brightness(0) invert(1);
 }
 
 @media (max-width: 768px) {
@@ -659,6 +693,7 @@ footer {
   #hero h1 {
     font-size: clamp(38px, 11vw, 68px) !important;
     line-height: 0.9 !important;
+    letter-spacing: -0.03em !important;
   }
 
   #hero .hero-sub {
