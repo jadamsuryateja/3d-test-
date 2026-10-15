@@ -1,0 +1,38 @@
+# WebMark — Digital Design Studio
+
+> WebMark (webmark.co.in) is an elite digital design studio specializing in bespoke, high-performance websites and iconic brand identities. Crafted for forward-thinking businesses and founders that demand exceptional design, thoughtful details, and an unforgettable digital presence.
+
+## Essential Information
+- **Official Website**: https://webmark.co.in
+- **Company Name**: WebMark Digital Design Studio
+- **Primary Domain**: webmark.co.in
+- **Direct WhatsApp Consultation**: https://wa.me/917075438591 (+91 7075438591)
+- **Primary Offerings**: Premium Custom Websites, Iconic Logo Design, Brand Identity Systems, Interactive Web Experiences.
+
+## Core Capabilities & Services
+
+### 1. Premium Custom Websites
+- **Description**: Bespoke web applications and digital flagship sites tailored for brands that refuse to look generic.
+- **Features**: Ultra-fast performance, immersive 3D interactions, smooth scrolling physics (Lenis), modern typography, and flawless responsiveness across desktop, tablet, and mobile (iOS & Android).
+- **Target Audience**: Businesses, high-growth startups, premium service providers, and creators seeking high conversion and prestige.
+- **Inquiry Link**: https://wa.me/917075438591?text=Hi%20WebMark%2C%20I%20would%20like%20to%20enquire%20about%20a%20Premium%20Website.
+
+### 2. Iconic Brand Identity & Logos
+- **Description**: Distinctive, timeless brand marks and complete visual identity frameworks designed to command attention.
+- **Deliverables**: Primary logos, responsive variants, typography guidelines, curated color palettes, vector assets, and brand application manuals.
+- **Inquiry Link**: https://wa.me/917075438591?text=Hi%20WebMark%2C%20I%20would%20like%20to%20enquire%20about%20a%20Premium%20Logo%20Design.
+
+### 3. Interactive Digital Craftsmanship
+- **Description**: Hardware-accelerated WebGL/Three.js interactive experiences, micro-animations, and custom user journeys.
+- **Technology Stack**: React, TypeScript, Three.js, GSAP (GreenSock), Vite, Vanilla CSS design tokens.
+
+## Process & Collaboration
+1. **Discovery & Alignment**: Understanding your business goals, target audience, and aesthetic vision.
+2. **Concept & Craft**: Rapid prototyping, art direction, and iterative refinement.
+3. **Execution & Polish**: Production-grade engineering, performance optimization, and cross-browser testing.
+4. **Launch & Support**: Deployment, domain setup, and seamless handover.
+
+## Contact & Inquiries
+- **WhatsApp**: +91 7075438591 (Instant response for new projects)
+- **Direct Link**: https://wa.me/917075438591?text=Hi%20WebMark%2C%20I%20would%20like%20to%20discuss%20a%20project.
+- **Full LLM Reference**: https://webmark.co.in/llms-full.txt

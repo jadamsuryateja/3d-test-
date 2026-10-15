@@ -1,0 +1,61 @@
+# WebMark — Digital Design Studio: Full System & Service Documentation
+
+Official Domain: https://webmark.co.in
+Contact: WhatsApp +91 7075438591 (https://wa.me/917075438591)
+Tagline: Crafted to Stand Out
+
+---
+
+## 1. Executive Summary
+WebMark is a specialized boutique digital studio based in India, catering to clients worldwide who demand exceptional visual taste, engineering excellence, and distinctive brand identities. The studio bridges the gap between high-end aesthetic design and robust modern web engineering.
+
+---
+
+## 2. Detailed Service Catalog
+
+### Service A: Bespoke Premium Websites
+- **Scope**: Complete architecture, UI/UX design, custom frontend development, and deployment.
+- **Technology Focus**: React 18+, TypeScript, Vite, Three.js WebGL rendering, GSAP animations, Lenis smooth scrolling, CSS tokens.
+- **Key Characteristics**: Zero generic template aesthetics, 60 FPS hardware acceleration, sub-second load times, mobile-first responsiveness, and conversion-optimized user flows.
+- **Typical Use Cases**: Corporate flagship websites, creative portfolios, SaaS landing pages, luxury brands, and e-commerce showcases.
+- **Inquiry**: Direct WhatsApp via +91 7075438591
+
+### Service B: Brand Identity & Logo Systems
+- **Scope**: Full brand discovery, concepting, typography pairing, color systems, and comprehensive brand guideline documentation.
+- **Deliverables**: Scalable SVG vectors, raster formats (PNG, WebP), favicon sets, social media kits, typography stylesheets, and dark/light mode brand marks.
+- **Philosophy**: Timeless simplicity, geometric precision, and memorable silhouette design.
+- **Inquiry**: Direct WhatsApp via +91 7075438591
+
+### Service C: Interactive 3D & Creative Development
+- **Scope**: 3D model integration (GLTF/GLB), scroll-driven camera trajectories, particle effects, custom shaders, and interactive HUD overlays.
+- **Performance Constraints**: Tested for battery efficiency and high refresh rates on Apple Silicon, modern Android, and Windows hardware.
+
+---
+
+## 3. Engagement & Workflow Model
+1. **Initial WhatsApp Inquiry**: Clients connect directly at +91 7075438591 to share project briefs, timelines, and goals.
+2. **Scoping & Proposal**: Clear deliverables, transparent milestones, and straightforward pricing.
+3. **Design Sprint**: High-fidelity prototypes, brand styleboards, and typographic locks.
+4. **Development & Animation**: Modular component coding, interactive polish, and responsiveness testing.
+5. **Deployment & Go-Live**: Production domain connection (webmark.co.in), SSL configuration, sitemap submission, and search console indexing.
+
+---
+
+## 4. Frequently Asked Questions (FAQ)
+
+### What makes WebMark different from conventional web agencies?
+WebMark focuses on bespoke, anti-generic craftsmanship. We avoid cookie-cutter WordPress/Wix templates, building tailored digital experiences with modern web technologies that command authority and captivate visitors.
+
+### How do I start a project with WebMark?
+You can initiate a project immediately by sending a message on WhatsApp to +91 7075438591 or visiting https://webmark.co.in and selecting "Start on WhatsApp".
+
+### Does WebMark provide support after launch?
+Yes, full handover documentation and ongoing support agreements are available for all websites and brand identity packages.
+
+---
+
+## 5. Metadata & Canonical References
+- **Domain**: https://webmark.co.in
+- **Sitemap**: https://webmark.co.in/sitemap.xml
+- **Robots Policy**: https://webmark.co.in/robots.txt
+- **LLM Summary**: https://webmark.co.in/llms.txt
